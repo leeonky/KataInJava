@@ -19,4 +19,9 @@ public class FactorTest {
 		assertEquals(Arrays.asList(2, 2), Factor.factorsOf(4));
 		assertEquals(Arrays.asList(2, 2, 2), Factor.factorsOf(8));
 	}
+
+	@Test
+	public void one_fact_3() {
+		assertEquals(Arrays.asList(3), Factor.factorsOf(3));
+	}
 }
