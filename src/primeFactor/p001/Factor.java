@@ -6,14 +6,18 @@ import java.util.stream.IntStream;
 public class Factor {
 
 	public static List<Integer> factorsOf(int number) {
+		return factorsOf(number, 2);
+	}
+
+	private static List<Integer> factorsOf(int number, int firstFactor) {
 		if (number == 1)
 			return Arrays.asList();
-		int factor = firstDivideableFactor(number);
+		int factor = firstDivideableFactor(number, firstFactor);
 		return mergeList(factor, factorsOf(number / factor));
 	}
 
-	private static int firstDivideableFactor(int number) {
-		return IntStream.rangeClosed(2, number).filter(i -> number % i == 0).findFirst().getAsInt();
+	private static int firstDivideableFactor(int number, int firstFactor) {
+		return IntStream.rangeClosed(firstFactor, number).filter(i -> number % i == 0).findFirst().getAsInt();
 	}
 
 	@SuppressWarnings("serial")
