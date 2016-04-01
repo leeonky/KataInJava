@@ -2,7 +2,7 @@ package primeFactor.p001;
 
 import static org.junit.Assert.*;
 
-import java.util.Arrays;
+import java.util.*;
 
 import org.junit.Test;
 
