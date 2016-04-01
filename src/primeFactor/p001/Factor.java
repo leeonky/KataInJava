@@ -9,7 +9,7 @@ public class Factor {
 			return Arrays.asList();
 		if (number % 2 == 0)
 			return mergeList(2, factorsOf(number / 2));
-		return Arrays.asList(3);
+		return mergeList(3, factorsOf(number / 3));
 	}
 
 	@SuppressWarnings("serial")
