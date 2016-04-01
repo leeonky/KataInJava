@@ -9,7 +9,9 @@ public class Factor {
 			return Arrays.asList();
 		if (number == 2)
 			return Arrays.asList(2);
-		return Arrays.asList(2, 2);
+		if (number == 4)
+			return Arrays.asList(2, 2);
+		return Arrays.asList(2, 2, 2);
 	}
 
 }
