@@ -13,4 +13,8 @@ public class FizzBizzTest {
 		assertEquals(Arrays.asList("1"), FizzBizz.count(1, 1));
 	}
 
+	@Test
+	public void two_numbers() {
+		assertEquals(Arrays.asList("1", "2"), FizzBizz.count(1, 2));
+	}
 }
