@@ -1,6 +1,7 @@
 package primeFactor.p001;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Factor {
 
@@ -12,10 +13,7 @@ public class Factor {
 	}
 
 	private static int firstDivideableFactor(int number) {
-		int factor = 2;
-		for (; number % factor != 0; factor++)
-			;
-		return factor;
+		return IntStream.rangeClosed(2, number).filter(i -> number % i == 0).findFirst().getAsInt();
 	}
 
 	@SuppressWarnings("serial")
