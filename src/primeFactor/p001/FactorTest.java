@@ -31,4 +31,9 @@ public class FactorTest {
 	public void several_factors_2_and_3_and_5() {
 		assertEquals(Arrays.asList(2, 3, 5), Factor.factorsOf(30));
 	}
+
+	@Test
+	public void test_primefactors() {
+		assertEquals(Arrays.asList(2, 3, 5, 11, 13, 17), Factor.factorsOf(2 * 3 * 5 * 11 * 13 * 17));
+	}
 }
