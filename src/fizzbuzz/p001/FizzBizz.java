@@ -8,13 +8,14 @@ public class FizzBizz {
 
 	@SuppressWarnings("serial")
 	public static List<String> count(int start, int end) {
-		if (start == 3 && end == 3)
+		int fizz = 3;
+		if (start == fizz && end == fizz)
 			return Arrays.asList("Fizz");
-		if (start == 1 && end == 3)
+		if (start == 1 && end == fizz)
 			return new ArrayList<String>() {
 				{
-					addAll(count(1, 2));
-					addAll(count(3, 3));
+					addAll(count(start, fizz - 1));
+					addAll(count(fizz, fizz));
 				}
 			};
 		return IntStream.rangeClosed(start, end).mapToObj(String::valueOf).collect(Collectors.toList());
