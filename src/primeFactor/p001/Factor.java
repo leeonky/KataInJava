@@ -10,7 +10,7 @@ public class Factor {
 		if (number == 2)
 			return Arrays.asList(2);
 		if (number == 4)
-			return Arrays.asList(2, 2);
+			return mergeList(2, factorsOf(number / 2));
 		return mergeList(2, factorsOf(number / 2));
 	}
 
