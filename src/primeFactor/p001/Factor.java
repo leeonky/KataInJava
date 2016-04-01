@@ -7,17 +7,15 @@ public class Factor {
 	public static List<Integer> factorsOf(int number) {
 		if (number == 1)
 			return Arrays.asList();
-		int factor = 2;
-		if (number % factor == 0)
-			return mergeList(factor, factorsOf(number / factor));
-		factor++;
-		if (number % factor == 0)
-			return mergeList(factor, factorsOf(number / factor));
-		factor++;
-		if (number % factor == 0)
-			return mergeList(factor, factorsOf(number / factor));
-		factor++;
+		int factor = firstDivideableFactor(number);
 		return mergeList(factor, factorsOf(number / factor));
+	}
+
+	private static int firstDivideableFactor(int number) {
+		int factor = 2;
+		for (; number % factor != 0; factor++)
+			;
+		return factor;
 	}
 
 	@SuppressWarnings("serial")
