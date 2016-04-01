@@ -26,4 +26,9 @@ public class FactorTest {
 		assertEquals(Arrays.asList(2, 3), Factor.factorsOf(6));
 		assertEquals(Arrays.asList(3, 3), Factor.factorsOf(9));
 	}
+
+	@Test
+	public void several_factors_2_and_3_and_5() {
+		assertEquals(Arrays.asList(2, 3, 5), Factor.factorsOf(30));
+	}
 }

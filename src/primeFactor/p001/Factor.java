@@ -7,9 +7,17 @@ public class Factor {
 	public static List<Integer> factorsOf(int number) {
 		if (number == 1)
 			return Arrays.asList();
-		if (number % 2 == 0)
-			return mergeList(2, factorsOf(number / 2));
-		return mergeList(3, factorsOf(number / 3));
+		int factor = 2;
+		if (number % factor == 0)
+			return mergeList(factor, factorsOf(number / factor));
+		factor++;
+		if (number % factor == 0)
+			return mergeList(factor, factorsOf(number / factor));
+		factor++;
+		if (number % factor == 0)
+			return mergeList(factor, factorsOf(number / factor));
+		factor++;
+		return mergeList(factor, factorsOf(number / factor));
 	}
 
 	@SuppressWarnings("serial")
