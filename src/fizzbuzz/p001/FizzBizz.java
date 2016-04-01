@@ -6,7 +6,7 @@ import java.util.List;
 public class FizzBizz {
 
 	public static List<String> count(int start, int end) {
-		return Arrays.asList("1");
+		return Arrays.asList(String.valueOf(start));
 	}
 
 }
