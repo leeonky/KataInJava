@@ -22,4 +22,9 @@ public class FactorTest {
 	public void has_two_foctors_2() {
 		assertEquals(Arrays.asList(2, 2), Factor.factorsOf(4));
 	}
+
+	@Test
+	public void has_three_foctors_2() {
+		assertEquals(Arrays.asList(2, 2, 2), Factor.factorsOf(8));
+	}
 }
