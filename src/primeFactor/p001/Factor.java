@@ -8,7 +8,7 @@ public class Factor {
 		if (number == 1)
 			return Arrays.asList();
 		if (number == 2)
-			return Arrays.asList(2);
+			return mergeList(2, factorsOf(number / 2));
 		if (number == 4)
 			return mergeList(2, factorsOf(number / 2));
 		return mergeList(2, factorsOf(number / 2));
