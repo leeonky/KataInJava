@@ -13,4 +13,8 @@ public class FactorTest {
 		assertEquals(Arrays.asList(), Factor.factorsOf(1));
 	}
 
+	@Test
+	public void _2_has_only_factor_2() {
+		assertEquals(Arrays.asList(2), Factor.factorsOf(2));
+	}
 }
