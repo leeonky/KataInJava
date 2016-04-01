@@ -17,4 +17,9 @@ public class FizzBizzTest {
 	public void two_numbers() {
 		assertEquals(Arrays.asList("1", "2"), FizzBizz.count(1, 2));
 	}
+
+	@Test
+	public void has_times_3() {
+		assertEquals(Arrays.asList("Fizz"), FizzBizz.count(3, 3));
+	}
 }
