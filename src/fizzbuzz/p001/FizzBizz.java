@@ -16,6 +16,7 @@ public class FizzBizz {
 				{
 					addAll(count(start, fizz - 1));
 					addAll(count(fizz, fizz));
+					addAll(count(fizz + 1, end));
 				}
 			};
 		if (start == 1 && end == 4)
@@ -23,7 +24,7 @@ public class FizzBizz {
 				{
 					addAll(count(start, fizz - 1));
 					addAll(count(fizz, fizz));
-					addAll(count(4, 4));
+					addAll(count(fizz + 1, end));
 				}
 			};
 		return IntStream.rangeClosed(start, end).mapToObj(String::valueOf).collect(Collectors.toList());
