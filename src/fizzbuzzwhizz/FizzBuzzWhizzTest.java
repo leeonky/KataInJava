@@ -39,4 +39,10 @@ public class FizzBuzzWhizzTest {
 		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz"),
 				FizzBuzzWhizz.count(10));
 	}
+
+	@Test
+	public void number_contains_3() {
+		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz", "11", "Fizz",
+				"Fizz"), FizzBuzzWhizz.count(13));
+	}
 }
