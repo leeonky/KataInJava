@@ -11,6 +11,8 @@ public class FizzBuzzWhizz {
 		sequenceTo(number).forEach(i -> list.set(i - 1, "Fizz"));
 		if (number >= 5)
 			list.set(4, "Buzz");
+		if (number >= 10)
+			list.set(9, "Buzz");
 		if (number >= 7)
 			list.set(6, "Whizz");
 		return list;
