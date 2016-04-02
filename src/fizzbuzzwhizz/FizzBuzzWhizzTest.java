@@ -14,4 +14,8 @@ public class FizzBuzzWhizzTest {
 		assertEquals(Arrays.asList("1", "2"), FizzBuzzWhizz.count(2));
 	}
 
+	@Test
+	public void count_first_fizz() {
+		assertEquals(Arrays.asList("1", "2", "Fizz"), FizzBuzzWhizz.count(3));
+	}
 }
