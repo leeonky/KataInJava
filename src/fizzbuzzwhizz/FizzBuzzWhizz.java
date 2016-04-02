@@ -8,16 +8,16 @@ public class FizzBuzzWhizz {
 
 	public static List<String> count(int number) {
 		List<String> list = convertNumberSequenceToStringFormat(number);
-		sequenceTo(number, 3).forEach(i -> list.set(i - 1, "Fizz"));
-		sequenceTo(number, 5).forEach(i -> list.set(i - 1, "Buzz"));
-		sequenceTo(number, 1).filter(i -> list.get(i - 1).contains("3")).forEach(i -> list.set(i - 1, "Fizz"));
+		listIndexSequenceTo(number, 3).forEach(i -> list.set(i, "Fizz"));
+		listIndexSequenceTo(number, 5).forEach(i -> list.set(i, "Buzz"));
+		listIndexSequenceTo(number, 1).filter(i -> list.get(i).contains("3")).forEach(i -> list.set(i, "Fizz"));
 		if (number >= 7)
 			list.set(6, "Whizz");
 		return list;
 	}
 
-	private static IntStream sequenceTo(int number, int step) {
-		return IntStream.rangeClosed(1, number / step).map(i -> i * step);
+	private static IntStream listIndexSequenceTo(int number, int step) {
+		return IntStream.rangeClosed(1, number / step).map(i -> i * step - 1);
 	}
 
 	private static ArrayList<String> convertNumberSequenceToStringFormat(int number) {
