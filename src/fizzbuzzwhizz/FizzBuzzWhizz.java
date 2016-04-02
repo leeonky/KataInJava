@@ -10,9 +10,8 @@ public class FizzBuzzWhizz {
 		List<String> list = convertNumberSequenceToStringFormat(number);
 		listIndexSequenceTo(number, 3).forEach(i -> list.set(i, "Fizz"));
 		listIndexSequenceTo(number, 5).forEach(i -> list.set(i, "Buzz"));
+		listIndexSequenceTo(number, 7).forEach(i -> list.set(i, "Whizz"));
 		listIndexSequenceTo(number, 1).filter(i -> list.get(i).contains("3")).forEach(i -> list.set(i, "Fizz"));
-		if (number >= 7)
-			list.set(6, "Whizz");
 		return list;
 	}
 
