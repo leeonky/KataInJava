@@ -11,7 +11,9 @@ public class FizzBuzzWhizz {
 				.collect(Collectors.toCollection(ArrayList<String>::new));
 		if (number >= 3)
 			list.set(2, "Fizz");
-		if (number == 5)
+		if (number >= 6)
+			list.set(5, "Fizz");
+		if (number >= 5)
 			list.set(4, "Buzz");
 		return list;
 	}
