@@ -8,7 +8,7 @@ public class FizzBuzzWhizz {
 
 	public static List<String> count(int number) {
 		List<String> list = convertNumberSequenceToStringFormat(number);
-		sequenceTo(number).forEach(i -> list.set(i - 1, "Fizz"));
+		sequenceTo(number, 3).forEach(i -> list.set(i - 1, "Fizz"));
 		if (number >= 5)
 			list.set(4, "Buzz");
 		if (number >= 10)
@@ -18,8 +18,8 @@ public class FizzBuzzWhizz {
 		return list;
 	}
 
-	private static IntStream sequenceTo(int number) {
-		return IntStream.rangeClosed(1, number / 3).map(i -> i * 3);
+	private static IntStream sequenceTo(int number, int step) {
+		return IntStream.rangeClosed(1, number / step).map(i -> i * step);
 	}
 
 	private static ArrayList<String> convertNumberSequenceToStringFormat(int number) {
