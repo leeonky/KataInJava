@@ -45,4 +45,10 @@ public class FizzBuzzWhizzTest {
 		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz", "11", "Fizz",
 				"Fizz"), FizzBuzzWhizz.count(13));
 	}
+
+	@Test
+	public void count_two_whizzs() {
+		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz", "11", "Fizz",
+				"Fizz", "Whizz"), FizzBuzzWhizz.count(14));
+	}
 }
