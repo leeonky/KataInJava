@@ -9,10 +9,17 @@ public class FizzBuzzWhizz {
 	public static List<String> count(int number) {
 		List<String> list = convertNumberSequenceToStringFormat(number);
 		listIndexSequenceTo(number, 3).forEach(i -> list.set(i, "Fizz"));
-		listIndexSequenceTo(number, 5).forEach(i -> list.set(i, "Buzz"));
-		listIndexSequenceTo(number, 7).forEach(i -> list.set(i, "Whizz"));
+		listIndexSequenceTo(number, 5).forEach(i -> process(list, i, "Buzz"));
+		listIndexSequenceTo(number, 7).forEach(i -> process(list, i, "Whizz"));
 		listIndexSequenceTo(number, 1).filter(i -> list.get(i).contains("3")).forEach(i -> list.set(i, "Fizz"));
 		return list;
+	}
+
+	private static void process(List<String> list, int i, String word) {
+		if (Character.isDigit(list.get(i).charAt(0)))
+			list.set(i, word);
+		else
+			list.set(i, list.get(i) + word);
 	}
 
 	private static IntStream listIndexSequenceTo(int number, int step) {

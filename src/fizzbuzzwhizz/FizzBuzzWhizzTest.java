@@ -51,4 +51,15 @@ public class FizzBuzzWhizzTest {
 		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz", "11", "Fizz",
 				"Fizz", "Whizz"), FizzBuzzWhizz.count(14));
 	}
+
+	@Test
+	public void fizz_and_buzz() {
+		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz", "11", "Fizz",
+				"Fizz", "Whizz", "FizzBuzz"), FizzBuzzWhizz.count(15));
+	}
+
+	@Test
+	public void fizz_and_whizz() {
+		assertEquals("FizzWhizz", FizzBuzzWhizz.count(21).get(20));
+	}
 }
