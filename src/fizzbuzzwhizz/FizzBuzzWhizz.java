@@ -9,10 +9,7 @@ public class FizzBuzzWhizz {
 	public static List<String> count(int number) {
 		List<String> list = IntStream.rangeClosed(1, number).mapToObj(String::valueOf)
 				.collect(Collectors.toCollection(ArrayList<String>::new));
-		if (number >= 3)
-			list.set(2, "Fizz");
-		if (number >= 6)
-			list.set(5, "Fizz");
+		IntStream.rangeClosed(1, number / 3).map(i -> i * 3).forEach(i -> list.set(i - 1, "Fizz"));
 		if (number >= 5)
 			list.set(4, "Buzz");
 		return list;
