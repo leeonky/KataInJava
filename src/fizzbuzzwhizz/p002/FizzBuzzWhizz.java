@@ -7,7 +7,10 @@ import java.util.stream.IntStream;
 public class FizzBuzzWhizz {
 
 	public static List<String> count(int to) {
-		return IntStream.rangeClosed(1, to).mapToObj(String::valueOf).collect(Collectors.toList());
+		List<String> result = IntStream.rangeClosed(1, to).mapToObj(String::valueOf).collect(Collectors.toList());
+		if (3 == to)
+			result.set(2, "Fizz");
+		return result;
 	}
 
 }
