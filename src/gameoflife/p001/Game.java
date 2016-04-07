@@ -16,7 +16,7 @@ public class Game {
 	}
 
 	public Set<Point> alives() {
-		return null;
+		return new HashSet<Point>();
 	}
 
 }
