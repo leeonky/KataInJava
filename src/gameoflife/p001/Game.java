@@ -10,7 +10,7 @@ public class Game {
 	public Game(int width, int height) {
 	}
 
-	public void setAlive(Point alive) {
+	public void addAlive(Point alive) {
 		alives.add(alive);
 	}
 
@@ -19,7 +19,11 @@ public class Game {
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
-		return alives.contains(target.getLeft()) && alives.contains(target.getRight());
+		return isAlive(target.getLeft()) && isAlive(target.getRight());
+	}
+
+	private boolean isAlive(Point target) {
+		return alives.contains(target);
 	}
 
 	public Set<Point> alives() {
