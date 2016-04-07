@@ -59,6 +59,7 @@ public class Point {
 	}
 
 	Stream<Point> getNeighours() {
-		return Stream.of(getLeft(), getRight(), getTop(), getBottom());
+		return Stream.of(getLeft(), getRight(), getTop(), getBottom(), new Point(x - 1, y - 1),
+				new Point(x + 1, y + 1));
 	}
 }
