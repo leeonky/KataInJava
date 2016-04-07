@@ -1,5 +1,7 @@
 package gameoflife.p001;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Point {
@@ -37,29 +39,16 @@ public class Point {
 		return true;
 	}
 
-	Point getLeft() {
-		return new Point(x - 1, y);
-	}
-
-	Point getRight() {
-		return new Point(x + 1, y);
-	}
-
-	public Point getBottom() {
-		return new Point(x, y + 1);
-	}
-
-	public Point getTop() {
-		return new Point(x, y - 1);
-	}
-
 	@Override
 	public String toString() {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
 	Stream<Point> getNeighours() {
-		return Stream.of(getLeft(), getRight(), getTop(), getBottom(), new Point(x - 1, y - 1), new Point(x + 1, y + 1),
-				new Point(x - 1, y + 1), new Point(x + 1, y - 1));
+		List<Point> neighours = new ArrayList<>();
+		for (int x = -1; x <= 1; x++)
+			for (int y = -1; y <= 1; y++)
+				neighours.add(new Point(x + this.x, y + this.y));
+		return neighours.stream().filter(p -> !this.equals(p));
 	}
 }
