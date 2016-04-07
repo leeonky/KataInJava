@@ -8,10 +8,14 @@ public class FizzBuzzWhizz {
 
 	public static List<String> count(int to) {
 		List<String> result = mapSequenceInStringList(to);
-		IntStream.rangeClosed(1, to / 3).map(i -> i * 3 - 1).forEach(i -> result.set(i, "Fizz"));
+		processFizzRule(to, result);
 		if (5 <= to)
 			result.set(4, "Buzz");
 		return result;
+	}
+
+	private static void processFizzRule(int to, List<String> result) {
+		IntStream.rangeClosed(1, to / 3).map(i -> i * 3 - 1).forEach(i -> result.set(i, "Fizz"));
 	}
 
 	private static List<String> mapSequenceInStringList(int to) {
