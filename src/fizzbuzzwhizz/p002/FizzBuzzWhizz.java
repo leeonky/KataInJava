@@ -10,8 +10,7 @@ public class FizzBuzzWhizz {
 		List<String> result = mapSequenceInStringList(to);
 		processFizzRule(3, to, result, "Fizz");
 		processFizzRule(5, to, result, "Buzz");
-		if (7 <= to)
-			result.set(6, "Whizz");
+		processFizzRule(7, to, result, "Whizz");
 		return result;
 	}
 
