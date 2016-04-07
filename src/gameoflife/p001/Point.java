@@ -43,4 +43,16 @@ public class Point {
 		return new Point(x + 1, y);
 	}
 
+	public Point getBottom() {
+		return new Point(x, y + 1);
+	}
+
+	public Point getTop() {
+		return new Point(x, y - 1);
+	}
+
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
 }
