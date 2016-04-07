@@ -20,7 +20,7 @@ public class Game {
 	}
 
 	public Set<Point> alives() {
-		return generation.alives;
+		return generation.alives();
 	}
 
 }

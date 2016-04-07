@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Generation {
-	public Set<Point> alives;
+	private Set<Point> alives;
 
 	public Generation(Set<Point> alives) {
 		this.alives = alives;
@@ -15,17 +15,20 @@ public class Generation {
 		return alives.contains(target);
 	}
 
+	private boolean isDead(Point target) {
+		return !isAlive(target);
+	}
+
 	private Stream<Point> allDeadNeighours() {
-		return alives.stream().flatMap(Point::getNeighours).filter(p -> !isAlive(p));
+		return alives.stream().flatMap(p -> p.neighoursWhich(this::isDead));
 	}
 
 	private boolean canAliveFromDeadInNextGeneration(Point deadTarget) {
-		return deadTarget.getNeighours().filter(this::isAlive).count() == 3;
+		return deadTarget.neighoursWhich(this::isAlive).count() == 3;
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
-		return target.getNeighours().filter(this::isAlive).count() == 2
-				|| target.getNeighours().filter(this::isAlive).count() == 3;
+		return target.neighoursWhich(this::isAlive).count() == 2 || target.neighoursWhich(this::isAlive).count() == 3;
 	}
 
 	public void addAlives(Point alive) {
@@ -37,5 +40,9 @@ public class Generation {
 				.concat(allDeadNeighours().filter(p -> canAliveFromDeadInNextGeneration(p)),
 						alives.stream().filter(p -> canSurviveInNextGeneration(p)))
 				.filter(p -> p.isIn(area)).collect(Collectors.toSet()));
+	}
+
+	public Set<Point> alives() {
+		return alives;
 	}
 }

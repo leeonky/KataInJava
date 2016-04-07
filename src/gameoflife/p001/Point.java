@@ -2,6 +2,7 @@ package gameoflife.p001;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Point {
@@ -54,5 +55,13 @@ public class Point {
 
 	public boolean isIn(Area area) {
 		return area.contains(x, y);
+	}
+
+	Stream<Point> neighoursWhich(Predicate<? super Point> predicate) {
+		List<Point> neighours = new ArrayList<>();
+		for (int x = -1; x <= 1; x++)
+			for (int y = -1; y <= 1; y++)
+				neighours.add(new Point(x + this.x, y + this.y));
+		return neighours.stream().filter(p -> !this.equals(p)).filter(predicate);
 	}
 }
