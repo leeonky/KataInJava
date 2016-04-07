@@ -2,8 +2,8 @@ package gameoflife.p001;
 
 public class Point {
 
-	private final int x;
-	private final int y;
+	final int x;
+	final int y;
 
 	public Point(int x, int y) {
 		this.x = x;
@@ -33,6 +33,14 @@ public class Point {
 		if (x != other.x)
 			return false;
 		return true;
+	}
+
+	Point getLeft() {
+		return new Point(x - 1, y);
+	}
+
+	Point getRight() {
+		return new Point(x + 1, y);
 	}
 
 }
