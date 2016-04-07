@@ -19,7 +19,8 @@ public class Game {
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
-		return isAlive(target.getLeft()) && isAlive(target.getRight());
+		return (isAlive(target.getLeft()) && isAlive(target.getRight())
+				|| isAlive(target.getTop()) && isAlive(target.getBottom()));
 	}
 
 	private boolean isAlive(Point target) {
