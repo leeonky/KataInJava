@@ -18,9 +18,12 @@ public class Game {
 	}
 
 	public Set<Point> alives() {
-		if (alives.size() == 3)
-			return new HashSet<Point>(Arrays.asList(new Point(2, 1)));
-		return new HashSet<>();
+		if (alives.size() == 3) {
+			alives = new HashSet<Point>(Arrays.asList(new Point(2, 1)));
+		} else {
+			alives = new HashSet<>();
+		}
+		return alives;
 	}
 
 }
