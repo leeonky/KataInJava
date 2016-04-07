@@ -1,5 +1,7 @@
 package gameoflife.p001;
 
+import java.util.stream.Stream;
+
 public class Point {
 
 	final int x;
@@ -54,5 +56,9 @@ public class Point {
 	@Override
 	public String toString() {
 		return "Point [x=" + x + ", y=" + y + "]";
+	}
+
+	Stream<Point> getNeighours() {
+		return Stream.of(getLeft(), getRight(), getTop(), getBottom());
 	}
 }

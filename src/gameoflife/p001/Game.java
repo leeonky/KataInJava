@@ -2,7 +2,6 @@ package gameoflife.p001;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Game {
 
@@ -20,11 +19,7 @@ public class Game {
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
-		return getNeighours(target).filter(this::isAlive).count() == 2;
-	}
-
-	private Stream<Point> getNeighours(Point target) {
-		return Stream.of(target.getLeft(), target.getRight(), target.getTop(), target.getBottom());
+		return target.getNeighours().filter(this::isAlive).count() == 2;
 	}
 
 	private boolean isAlive(Point target) {
