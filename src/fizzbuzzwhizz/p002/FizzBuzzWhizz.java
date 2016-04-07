@@ -14,7 +14,13 @@ public class FizzBuzzWhizz {
 		processFizzRule(3 * 5, to, result, "FizzBuzz");
 		processFizzRule(3 * 7, to, result, "FizzWhizz");
 		processFizzRule(5 * 7, to, result, "BuzzWhizz");
+		processNumbersContain3(to, result);
 		return result;
+	}
+
+	private static void processNumbersContain3(int to, List<String> result) {
+		IntStream.rangeClosed(1, to).filter(i -> String.valueOf(i).contains("3"))
+				.forEach(i -> result.set(i - 1, "Fizz"));
 	}
 
 	private static void processFizzRule(int step, int to, List<String> result, String word) {
