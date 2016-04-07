@@ -7,13 +7,13 @@ import java.util.stream.IntStream;
 public class FizzBuzzWhizz {
 
 	public static List<String> count(int to) {
-		List<String> result = mapSequenceInStringList(to);
-		processFizzRule(3, to, result, "Fizz");
-		processFizzRule(5, to, result, "Buzz");
-		processFizzRule(7, to, result, "Whizz");
-		processFizzRule(3 * 5, to, result, "FizzBuzz");
-		processFizzRule(3 * 7, to, result, "FizzWhizz");
-		processFizzRule(5 * 7, to, result, "BuzzWhizz");
+		List<String> result = mapSequenceToStringList(to);
+		processRuleByStep(3, to, result, "Fizz");
+		processRuleByStep(5, to, result, "Buzz");
+		processRuleByStep(7, to, result, "Whizz");
+		processRuleByStep(3 * 5, to, result, "FizzBuzz");
+		processRuleByStep(3 * 7, to, result, "FizzWhizz");
+		processRuleByStep(5 * 7, to, result, "BuzzWhizz");
 		processNumbersContain3(to, result);
 		return result;
 	}
@@ -23,11 +23,11 @@ public class FizzBuzzWhizz {
 				.forEach(i -> result.set(i - 1, "Fizz"));
 	}
 
-	private static void processFizzRule(int step, int to, List<String> result, String word) {
+	private static void processRuleByStep(int step, int to, List<String> result, String word) {
 		IntStream.rangeClosed(1, to / step).map(i -> i * step - 1).forEach(i -> result.set(i, word));
 	}
 
-	private static List<String> mapSequenceInStringList(int to) {
+	private static List<String> mapSequenceToStringList(int to) {
 		return IntStream.rangeClosed(1, to).mapToObj(String::valueOf).collect(Collectors.toList());
 	}
 
