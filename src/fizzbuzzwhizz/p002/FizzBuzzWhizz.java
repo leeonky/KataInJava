@@ -1,11 +1,11 @@
 package fizzbuzzwhizz.p002;
 
-import java.util.List;
+import java.util.*;
 
 public class FizzBuzzWhizz {
 
 	public static List<String> count(int to) {
-		return null;
+		return Arrays.asList("1");
 	}
 
 }
