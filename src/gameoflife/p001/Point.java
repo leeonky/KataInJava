@@ -6,8 +6,8 @@ import java.util.stream.Stream;
 
 public class Point {
 
-	final int x;
-	final int y;
+	private final int x;
+	private final int y;
 
 	public Point(int x, int y) {
 		this.x = x;
@@ -44,11 +44,15 @@ public class Point {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
-	Stream<Point> getNeighours() {
+	public Stream<Point> getNeighours() {
 		List<Point> neighours = new ArrayList<>();
 		for (int x = -1; x <= 1; x++)
 			for (int y = -1; y <= 1; y++)
 				neighours.add(new Point(x + this.x, y + this.y));
 		return neighours.stream().filter(p -> !this.equals(p));
+	}
+
+	public boolean isIn(Area area) {
+		return area.contains(x, y);
 	}
 }
