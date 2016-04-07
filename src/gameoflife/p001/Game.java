@@ -6,13 +6,11 @@ import java.util.stream.Stream;
 
 public class Game {
 
-	Set<Point> alives = new HashSet<>();
-	private final int width;
-	private final int height;
+	private Set<Point> alives = new HashSet<>();
+	private Area area;
 
 	public Game(int width, int height) {
-		this.width = width;
-		this.height = height;
+		this.area = new Area(1, 1, width, height);
 	}
 
 	public void addAlive(Point alive) {
@@ -20,16 +18,18 @@ public class Game {
 	}
 
 	public void generate() {
-		Set<Point> newAlive = canAliveFromDeadInNextGeneration().collect(Collectors.toSet());
-		alives = alives.stream().filter(this::canSurviveInNextGeneration).collect(Collectors.toSet());
-		alives.addAll(newAlive);
-		alives = alives.stream().filter(p -> p.x <= width && p.y <= height && p.x > 0 && p.y > 0)
-				.collect(Collectors.toSet());
+		alives = Stream
+				.concat(allDeadNeighours().filter(this::canAliveFromDeadInNextGeneration),
+						alives.stream().filter(this::canSurviveInNextGeneration))
+				.filter(p -> p.isIn(area)).collect(Collectors.toSet());
 	}
 
-	private Stream<Point> canAliveFromDeadInNextGeneration() {
-		return alives.stream().flatMap(Point::getNeighours).filter(p -> !isAlive(p))
-				.filter(p -> p.getNeighours().filter(this::isAlive).count() == 3);
+	private Stream<Point> allDeadNeighours() {
+		return alives.stream().flatMap(Point::getNeighours).filter(p -> !isAlive(p));
+	}
+
+	private boolean canAliveFromDeadInNextGeneration(Point deadTarget) {
+		return deadTarget.getNeighours().filter(this::isAlive).count() == 3;
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
