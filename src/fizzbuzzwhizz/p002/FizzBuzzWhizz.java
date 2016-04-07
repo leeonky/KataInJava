@@ -5,7 +5,7 @@ import java.util.*;
 public class FizzBuzzWhizz {
 
 	public static List<String> count(int to) {
-		return Arrays.asList("1");
+		return Arrays.asList(String.valueOf(to));
 	}
 
 }
