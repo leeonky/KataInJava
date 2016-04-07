@@ -14,6 +14,7 @@ public class FizzBuzzWhizz {
 		processRuleByStep(3 * 5, to, result, "FizzBuzz");
 		processRuleByStep(3 * 7, to, result, "FizzWhizz");
 		processRuleByStep(5 * 7, to, result, "BuzzWhizz");
+		processRuleByStep(3 * 5 * 7, to, result, "FizzBuzzWhizz");
 		processNumbersContain3(to, result);
 		return result;
 	}
