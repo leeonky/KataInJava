@@ -1,6 +1,7 @@
 package gameoflife.p001;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Game {
 
@@ -14,12 +15,7 @@ public class Game {
 	}
 
 	public void generate() {
-		Point target = new Point(2, 1);
-		HashSet<Point> nextAlives = new HashSet<>();
-		if (alives.contains(target) && canSurviveInNextGeneration(target)) {
-			nextAlives.add(target);
-		}
-		alives = nextAlives;
+		alives = alives.stream().filter(this::canSurviveInNextGeneration).collect(Collectors.toSet());
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
