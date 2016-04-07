@@ -44,4 +44,19 @@ public class FizzbuzzwhizzTest {
 		assertEquals("Whizz", result.get(6));
 		assertEquals("Whizz", result.get(13));
 	}
+
+	@Test
+	public void fizzbuzz() {
+		assertEquals("FizzBuzz", FizzBuzzWhizz.count(15).get(14));
+	}
+
+	@Test
+	public void fizzwhizz() {
+		assertEquals("FizzWhizz", FizzBuzzWhizz.count(21).get(20));
+	}
+
+	@Test
+	public void buzzwhizz() {
+		assertEquals("BuzzWhizz", FizzBuzzWhizz.count(70).get(69));
+	}
 }

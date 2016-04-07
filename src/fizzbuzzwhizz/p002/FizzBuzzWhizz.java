@@ -11,6 +11,9 @@ public class FizzBuzzWhizz {
 		processFizzRule(3, to, result, "Fizz");
 		processFizzRule(5, to, result, "Buzz");
 		processFizzRule(7, to, result, "Whizz");
+		processFizzRule(3 * 5, to, result, "FizzBuzz");
+		processFizzRule(3 * 7, to, result, "FizzWhizz");
+		processFizzRule(5 * 7, to, result, "BuzzWhizz");
 		return result;
 	}
 
