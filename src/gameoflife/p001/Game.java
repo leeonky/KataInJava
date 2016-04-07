@@ -14,7 +14,7 @@ public class Game {
 	}
 
 	public void generate() {
-		if (alives.size() == 3) {
+		if (alives.contains(new Point(1, 1)) && alives.contains(new Point(2, 1)) && alives.contains(new Point(3, 1))) {
 			alives = new HashSet<Point>(Arrays.asList(new Point(2, 1)));
 		} else {
 			alives = new HashSet<>();
