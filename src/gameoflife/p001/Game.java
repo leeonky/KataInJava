@@ -14,15 +14,14 @@ public class Game {
 	}
 
 	public void generate() {
-
-	}
-
-	public Set<Point> alives() {
 		if (alives.size() == 3) {
 			alives = new HashSet<Point>(Arrays.asList(new Point(2, 1)));
 		} else {
 			alives = new HashSet<>();
 		}
+	}
+
+	public Set<Point> alives() {
 		return alives;
 	}
 
