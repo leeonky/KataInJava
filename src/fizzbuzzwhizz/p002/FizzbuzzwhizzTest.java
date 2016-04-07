@@ -15,8 +15,9 @@ public class FizzbuzzwhizzTest {
 	}
 
 	@Test
-	public void one_fizz() {
+	public void fizzs_step_by_3() {
 		assertEquals(Arrays.asList("1", "2", "Fizz"), FizzBuzzWhizz.count(3));
+		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz"), FizzBuzzWhizz.count(6));
 	}
 
 	@Test
@@ -26,6 +27,5 @@ public class FizzbuzzwhizzTest {
 
 	@Test
 	public void two_fizzs() {
-		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz"), FizzBuzzWhizz.count(6));
 	}
 }
