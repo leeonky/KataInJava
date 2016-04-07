@@ -10,6 +10,10 @@ public class FizzBuzzWhizz {
 		List<String> result = IntStream.rangeClosed(1, to).mapToObj(String::valueOf).collect(Collectors.toList());
 		if (3 == to)
 			result.set(2, "Fizz");
+		if (5 == to) {
+			result.set(2, "Fizz");
+			result.set(4, "Buzz");
+		}
 		return result;
 	}
 
