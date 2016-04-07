@@ -17,11 +17,9 @@ public class Game {
 		Point target = new Point(2, 1);
 		HashSet<Point> nextAlives = new HashSet<>();
 		if (alives.contains(target) && canSurviveInNextGeneration(target)) {
-			nextAlives = new HashSet<Point>(Arrays.asList(target));
-			alives = nextAlives;
-		} else {
-			alives = nextAlives;
+			nextAlives.add(target);
 		}
+		alives = nextAlives;
 	}
 
 	private boolean canSurviveInNextGeneration(Point target) {
