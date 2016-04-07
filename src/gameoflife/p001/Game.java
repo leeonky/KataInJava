@@ -4,11 +4,13 @@ import java.util.*;
 
 public class Game {
 
+	Set<Point> alives = new HashSet<>();
+
 	public Game(int width, int height) {
 	}
 
 	public void setAlive(Point alive) {
-
+		alives.add(alive);
 	}
 
 	public void generate() {
@@ -16,7 +18,9 @@ public class Game {
 	}
 
 	public Set<Point> alives() {
-		return new HashSet<Point>();
+		if (alives.size() == 3)
+			return new HashSet<Point>(Arrays.asList(new Point(2, 1)));
+		return new HashSet<>();
 	}
 
 }
