@@ -1,4 +1,4 @@
-package fizzbuzzwhizz;
+package fizzbuzzwhizz.p001;
 
 import java.util.*;
 import java.util.stream.Collectors;
