@@ -23,6 +23,8 @@ public class FizzbuzzwhizzTest {
 	@Test
 	public void one_buzz() {
 		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz"), FizzBuzzWhizz.count(5));
+		assertEquals(Arrays.asList("1", "2", "Fizz", "4", "Buzz", "Fizz", "Whizz", "8", "Fizz", "Buzz"),
+				FizzBuzzWhizz.count(10));
 	}
 
 	@Test

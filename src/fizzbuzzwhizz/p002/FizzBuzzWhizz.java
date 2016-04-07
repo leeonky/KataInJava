@@ -11,7 +11,9 @@ public class FizzBuzzWhizz {
 		processFizzRule(to, result);
 		if (5 <= to)
 			result.set(4, "Buzz");
-		if (7 == to)
+		if (10 <= to)
+			result.set(9, "Buzz");
+		if (7 <= to)
 			result.set(6, "Whizz");
 		return result;
 	}
