@@ -59,4 +59,14 @@ public class FizzbuzzwhizzTest {
 	public void buzzwhizz() {
 		assertEquals("BuzzWhizz", FizzBuzzWhizz.count(70).get(69));
 	}
+
+	@Test
+	public void fizzbuzzwhizz() {
+		assertEquals("FizzBuzzWhizz", FizzBuzzWhizz.count(3 * 5 * 7).get(3 * 5 * 7 - 1));
+	}
+
+	@Test
+	public void contains_3() {
+		assertEquals("Fizz", FizzBuzzWhizz.count(35).get(34));
+	}
 }
